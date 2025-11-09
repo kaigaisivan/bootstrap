@@ -40,72 +40,74 @@
     </nav>
     <div class="container my-5">
         <h2 class="text-center text-primary">Contact us</h2>
-    <div class="row">
-        <div class="col-md-6 mx-auto">
-            <form action="">
-                 <div class="mb-3">
-  <label for="fname" class="form-label">Full Name</label>
-  <input type="text" class="form-control" id="email" placeholder="John Doe" name="full-name">
-</div>
-           <div class="mb-3">
-  <label for="email" class="form-label">Email address</label>
-  <input type="email" class="form-control" id="email" placeholder="name@example.com"name="email">
-</div>
-<div class="mb-3">
-  <label for="message" class="form-label">Comments</label>
-  <textarea class="form-control" id="message" rows="3"></textarea>
-</div>
-</form>
-         
-               <button class="btn btn-primary" type="submit">Submit</button>
-         
-                  
-    </div>
-</div>   
-       <script src="./static/js/bootstrap.min.js"></script>
-       <!-- footer -->
-       <footer class="bg-danger text-white text-center mt-5">
-    <div class="contaner">
-      <div class="row">
-        <!-- col1 -->
-        <div class="col-md-4">
-    <!-- conpanyinfo -->
-     <h5 class="fw-bold">Grok tech</h5>
-      <p>A Software and Web development company</p>
+        <div class="row">
+            <div class="col-md-6 mx-auto">
+                <form action="">
+                    <div class="mb-3">
+                        <label for="fname" class="form-label">Full Name</label>
+                        <!-- Changed: Fixed ID mismatch for Full Name input -->
+                        <!-- Old: id="email" (incorrect, conflicted with email input's ID) -->
+                        <!-- New: id="fname" (matches the label's for attribute) -->
+                        <!-- Purpose: Ensures proper form accessibility and prevents ID conflicts for screen readers and JavaScript -->
+                        <input type="text" class="form-control" id="fname" placeholder="John Doe" name="full-name">
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email address</label>
+                        <input type="email" class="form-control" id="email" placeholder="name@example.com" name="email">
+                    </div>
+                    <div class="mb-3">
+                        <label for="message" class="form-label">Comments</label>
+                        <textarea class="form-control" id="message" rows="3"></textarea>
+                    </div>
+                    <!-- Changed: Moved submit button inside the form -->
+                    <!-- Old: Button was outside the form, preventing form submission -->
+                    <!-- New: Button is inside the form to function as a submit button -->
+                    <!-- Purpose: Allows the button to submit the form data when clicked -->
+                    <button class="btn btn-primary" type="submit">Submit</button>
+                </form>
+            </div>
         </div>
-        <!-- col2 -->
-         <div class="col-md-4">
-           <h5>Navigation</h5>
-           <ul class="list-unstyled">
-            <li><a href="index.html"class="text-white decoration-none">Home</a></li>
-            <li><a href="about.html"class="text-white decoration-none">About us</a></li>
-            <li><a href="contact.html"class="text-white decoration-none">Contact us</a></li>
-            <li><a href="services.html"class="text-white decoration-none">Services</a></li>
-           </ul>
-         </div>
-         <!-- col3 -->
-          <div class="col-md-4">
-            <h5>Get in touch</h5>
-            <a href="https://www.facebook.com/"class="text-white fw-bold"><i class="bi bi-facebook"></i></a>
-            <a href="https://wa.me/0790129480" target="_blank"class="text-white"><i class="bi bi-whatsapp"></i></a>
-            <a href="https://x.com/" target="_blank"class="text-white"><i class="bi bi-twitter-x"></i></a>
-
-
-            
-
-
-
-          </div>
-
-      </div>
-
     </div>
-    <div class="text-center p-3">
-      <p>&copy:Grok technology</p>
-
-    </div>
-
-   </footer>
-  
+    <script src="./static/js/bootstrap.min.js"></script>
+    <footer class="bg-danger text-white text-center mt-5">
+        <!-- Changed: Replaced contaner with container-fluid -->
+        <!-- Old: Had a typo ("contaner"), causing margins on the sides -->
+        <!-- New: container-fluid ensures the footer content spans the full width without horizontal padding -->
+        <!-- Purpose: Makes the footer content align with the full-width behavior of other pages -->
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5 class="fw-bold">Grok tech</h5>
+                    <p>A Software and Web development company</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Navigation</h5>
+                    <ul class="list-unstyled">
+                        <!-- Changed: Fixed class name for navigation links -->
+                        <!-- Old: class="text-white decoration-none" (incorrect Bootstrap class) -->
+                        <!-- New: class="text-white text-decoration-none" (correct Bootstrap class) -->
+                        <!-- Purpose: Removes underlines from links for a cleaner appearance -->
+                        <li><a href="index.html" class="text-white text-decoration-none">Home</a></li>
+                        <li><a href="about.html" class="text-white text-decoration-none">About us</a></li>
+                        <li><a href="contact.html" class="text-white text-decoration-none">Contact us</a></li>
+                        <li><a href="services.html" class="text-white text-decoration-none">Services</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Get in touch</h5>
+                    <a href="https://www.facebook.com/" class="text-white fw-bold"><i class="bi bi-facebook"></i></a>
+                    <a href="https://wa.me/0790129480" target="_blank" class="text-white"><i class="bi bi-whatsapp"></i></a>
+                    <a href="https://x.com/" target="_blank" class="text-white"><i class="bi bi-twitter-x"></i></a>
+                </div>
+            </div>
+        </div>
+        <!-- Changed: Added space after &copy; for proper formatting -->
+        <!-- Old: &copy:Grok technology (no space, looked cramped) -->
+        <!-- New: &copy; Grok technology (added space for clarity) -->
+        <!-- Purpose: Improves readability of the copyright notice -->
+        <div class="text-center p-3">
+            <p>&copy; Grok technology</p>
+        </div>
+    </footer>
 </body>
 </html>
